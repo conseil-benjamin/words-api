@@ -23,4 +23,4 @@ const wordsSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Words", wordsSchema);
+module.exports = mongoose.model("Words", wordsSchema, "Words");

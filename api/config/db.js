@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
+require("dotenv").config();
+
+const MONGO_URL = process.env.MONGO_URL;
 
 async function connectDB() {
   try {
     mongoose.set("strictQuery", false);
     await mongoose.connect(
-      "mongodb+srv://Benziii:Anneso73@hangman-api.7l6awhc.mongodb.net/",
+      "mongodb+srv://Benziii:Anneso73@hangman-api.7l6awhc.mongodb.net/Hangman-Api?retryWrites=true&w=majority",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -18,4 +20,4 @@ async function connectDB() {
   }
 }
 
-module.exports = connectDB; 
+module.exports = connectDB;
